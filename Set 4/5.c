@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 main()
 {
 int petrol,i,distance[100],capacity[100];
@@ -24,6 +25,11 @@ printf("Petrol bunks:\n");
   if(petrol>0)
   {
    petrol=petrol-distance[i];
+   
+   if(petrol<0){
+       printf("sorry....!!!cannot reach the %c petrol bank....!!!\n",bunks[i]);
+       exit(0);
+   }
    petrol=capacity[i]+petrol;
   }
   else
